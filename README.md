@@ -5,13 +5,6 @@ Public subnet access internet through Default Internet gateway and private subne
 
 ## Inputs
 
-- `project_id: string`
-  - Id of GCP project.
-- `network_name: string`
-  - Name of VPC network.
-- `subnet_region: string`
-  - Region where subnet will be provisioned.
-  - Default: `us-west1`
 - `public_subnets: list(string)`
   - Network ranges for public subnets created in the VPC. Able to access the internet through Default Internet gateway.
   - Default: `["10.0.101.0/24", "10.0.102.0/24"]`
@@ -27,7 +20,7 @@ Public subnet access internet through Default Internet gateway and private subne
 - `subnets: map` 
   - A map with keys of form subnet_region/subnet_name and values being the outputs of the google_compute_subnetwork resources used to create corresponding subnets.
 
-  Sample subnet map for with private subnet:
+  Sample subnet map for private subnet:
   ```HCL
   {
     "us-west1/private-subnet-1" = {

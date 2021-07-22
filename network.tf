@@ -1,13 +1,9 @@
-provider "google" {
-  project = var.project_id
-}
-
 module "gcp-network" {
   source  = "terraform-google-modules/network/google"
   version = "~> 3.0"
 
-  project_id   = var.project_id
-  network_name = var.network_name
+  project_id   = data.google_compute_zones.available.project
+  network_name = local.resource_name
   routing_mode = "GLOBAL"
 
   subnets = concat(
@@ -16,7 +12,7 @@ module "gcp-network" {
       for index, subnet_cidr in var.public_subnets : {
         subnet_name   = "public-subnet-${index + 1}"
         subnet_ip     = subnet_cidr
-        subnet_region = var.subnet_region
+        subnet_region = data.google_compute_zones.available.region
       }
     ]),
 
@@ -25,7 +21,7 @@ module "gcp-network" {
       for index, subnet_cidr in var.private_subnets : {
         subnet_name           = "private-subnet-${index + 1}"
         subnet_ip             = subnet_cidr
-        subnet_region         = var.subnet_region
+        subnet_region         = data.google_compute_zones.available.region
         subnet_private_access = "true"
       }
     ])
@@ -36,9 +32,9 @@ resource "google_compute_router_nat" "nat" {
   depends_on = [
     module.gcp-network
   ]
-  name                               = "${var.network_name}-nat"
+  name                               = "${module.gcp-network.network_name}-nat"
   router                             = google_compute_router.router.name
-  region                             = var.subnet_region
+  region                             = data.google_compute_zones.available.region
   nat_ip_allocate_option             = "AUTO_ONLY"
   source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
 
@@ -52,9 +48,9 @@ resource "google_compute_router_nat" "nat" {
 }
 
 resource "google_compute_router" "router" {
-  name    = "${var.network_name}-router"
+  name    = "${module.gcp-network.network_name}-router"
   network = module.gcp-network.network_name
-  region  = var.subnet_region
+  region  = data.google_compute_zones.available.region
   bgp {
     asn            = 64514
     advertise_mode = "CUSTOM"
