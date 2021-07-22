@@ -1,5 +1,5 @@
 # gcp-network
-Nullstone module to launch a standard GCP network. This module will create public and private subnet in provided region.
+Nullstone module to launch a standard GCP network. This module will create a public and private subnet in a provided region.
 
 Public subnet access internet through Default Internet gateway and private subnet access internet through Cloud Router and NAT Gateway.
 
@@ -28,7 +28,7 @@ Public subnet access internet through Default Internet gateway and private subne
   - A map with keys of form subnet_region/subnet_name and values being the outputs of the google_compute_subnetwork resources used to create corresponding subnets.
 
   Sample subnet map for with private subnet:
-  ```json
+  ```HCL
   {
     "us-west1/private-subnet-1" = {
         "creation_timestamp" = "2021-07-21T20:27:27.850-07:00"
