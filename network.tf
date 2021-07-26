@@ -10,7 +10,7 @@ module "gcp-network" {
     # Public subnet
     flatten([
       for index, subnet_cidr in var.public_subnets : {
-        subnet_name   = "public-subnet-${index + 1}"
+        subnet_name   = "${local.resource_name}-public-${index + 1}"
         subnet_ip     = subnet_cidr
         subnet_region = data.google_compute_zones.available.region
       }
@@ -19,7 +19,7 @@ module "gcp-network" {
     # Private subnet
     flatten([
       for index, subnet_cidr in var.private_subnets : {
-        subnet_name           = "private-subnet-${index + 1}"
+        subnet_name           = "${local.resource_name}-private-${index + 1}"
         subnet_ip             = subnet_cidr
         subnet_region         = data.google_compute_zones.available.region
         subnet_private_access = "true"
@@ -41,7 +41,7 @@ resource "google_compute_router_nat" "nat" {
   dynamic "subnetwork" {
     for_each = var.private_subnets
     content {
-      name                    = "private-subnet-${subnetwork.key + 1}"
+      name                    = "${local.resource_name}-private-${subnetwork.key + 1}"
       source_ip_ranges_to_nat = ["ALL_IP_RANGES"]
     }
   }
