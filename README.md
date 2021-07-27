@@ -44,12 +44,18 @@ Public subnet access internet through Default Internet gateway and private subne
   }
   ```
 
-- `subnets_names: list(string)`
-  - The names of the subnets being created
-  
-- `subnets_ids: list(string)`
-  - The IDs of the subnets being created
-  
+- `public_subnet_names: list(string)`
+  - The names of the public  subnets being created
+
+- `private_subnet_names: list(string)`
+  - The names of the private subnets being created
+
+- `public_subnets_ids: list(string)`
+  - The IDs of the public subnets being created
+
+- `private_subnets_ids: list(string)`
+  - The IDs of the private subnets being created
+ 
 - `cloud_nat: string` 
   - Id of Cloud NAT (For example: `experimental-320320/us-west1/nullstone-vpc-router/nullstone-vpc-nat`)
 
