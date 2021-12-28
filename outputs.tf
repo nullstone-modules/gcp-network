@@ -42,3 +42,8 @@ output "router_id" {
   value       = google_compute_router.this.id
   description = "string ||| Id of Cloud Router"
 }
+
+output "serverless_connector_name" {
+  value       = google_vpc_access_connector.serverless.name
+  description = "string ||| Name of the VPC Access Connector created for serverless access."
+}
