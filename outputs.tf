@@ -1,6 +1,11 @@
+output "vpc_id" {
+  value       = google_compute_network.this.id
+  description = "string || The ID of the created VPC in the form 'projects/(project-id)/global/networks/(vpc-name)'."
+}
+
 output "vpc_name" {
   value       = local.resource_name
-  description = "string ||| The name of the VPC being created"
+  description = "string ||| The name of the created VPC."
 }
 
 output "public_subnet_names" {
