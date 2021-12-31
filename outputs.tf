@@ -23,6 +23,11 @@ output "public_cidrs" {
   description = "list(string) ||| The network ranges of the public subnets"
 }
 
+output "public_subnet_self_links" {
+  value       = google_compute_subnetwork.public.*.self_link
+  description = "list(string) ||| The self_link of each public subnet"
+}
+
 output "private_subnet_names" {
   value       = google_compute_subnetwork.private.*.name
   description = "list(string) ||| The names of the private subnets"
@@ -36,6 +41,11 @@ output "private_subnets_ids" {
 output "private_cidrs" {
   value       = google_compute_subnetwork.private.*.ip_cidr_range
   description = "list(string) ||| The network ranges of the private subnets"
+}
+
+output "private_subnet_self_links" {
+  value       = google_compute_subnetwork.private.*.self_link
+  description = "list(string) ||| The self_link of each private subnet"
 }
 
 output "nat_id" {
