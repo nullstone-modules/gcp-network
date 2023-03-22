@@ -1,0 +1,13 @@
+org_name: nullstone
+name: gcp-network
+friendly_name: Network
+description: Produces a standard, best-practice network in GCP
+category: network
+subcategory: ""
+provider_types:
+    - gcp
+platform: vpc
+subplatform: ""
+type: ""
+appCategories: []
+is_public: true
