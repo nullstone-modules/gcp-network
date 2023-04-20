@@ -1,3 +1,6 @@
+# 0.2.2 (Apr 20, 2023)
+* Increased default public and private subnets to larger ranges (`/16` instead of `/24`).
+
 # 0.2.1 (Mar 22, 2023)
 * Add missing `.terraform.lock.hcl`.
 
