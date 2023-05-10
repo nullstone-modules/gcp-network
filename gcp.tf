@@ -1,4 +1,6 @@
-data "google_compute_zones" "available" {}
+data "google_compute_zones" "available" {
+  depends_on = [google_project_service.compute]
+}
 
 resource "google_project_service" "compute" {
   service                    = "compute.googleapis.com"
