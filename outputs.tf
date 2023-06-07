@@ -59,6 +59,6 @@ output "router_id" {
 }
 
 output "serverless_vpc_access_connector" {
-  value       = google_vpc_access_connector.serverless.name
+  value       = try(google_vpc_access_connector.serverless[0].name, "")
   description = "string ||| The name of the VPC Access Connector that should be used by serverless to access the private subnetworks."
 }
