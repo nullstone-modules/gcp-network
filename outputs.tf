@@ -57,3 +57,8 @@ output "router_id" {
   value       = google_compute_router.this.id
   description = "string ||| Id of Cloud Router"
 }
+
+output "vpc_access_connector" {
+  value       = try(google_vpc_access_connector.serverless[0].name, "")
+  description = "string ||| The name of the VPC Access Connector that should be used by serverless to access the private subnetworks."
+}

@@ -9,3 +9,7 @@ variable "private_subnets" {
   description = "Network ranges for private subnets created in the VPC. Able to access the internet through Cloud Router and NAT Gateway."
   default     = ["10.102.0.0/16"]
 }
+
+locals {
+  connector_subnet = "10.128.0.0/28"
+}

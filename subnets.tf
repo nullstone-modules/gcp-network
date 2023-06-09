@@ -5,7 +5,7 @@ resource "google_compute_subnetwork" "public" {
   network                    = google_compute_network.this.name
   region                     = data.google_compute_zones.available.region
   private_ip_google_access   = false
-  private_ipv6_google_access = false
+  private_ipv6_google_access = "DISABLE_GOOGLE_ACCESS"
 
   count = length(var.public_subnets)
 }
@@ -16,7 +16,16 @@ resource "google_compute_subnetwork" "private" {
   network                    = google_compute_network.this.name
   region                     = data.google_compute_zones.available.region
   private_ip_google_access   = true
-  private_ipv6_google_access = true
+  private_ipv6_google_access = "ENABLE_GOOGLE_ACCESS"
 
   count = length(var.private_subnets)
+}
+
+resource "google_compute_subnetwork" "access_connector" {
+  name                       = "${local.resource_name}-connector-0"
+  ip_cidr_range              = local.connector_subnet
+  network                    = google_compute_network.this.name
+  region                     = data.google_compute_zones.available.region
+  private_ip_google_access   = true
+  private_ipv6_google_access = "DISABLE_GOOGLE_ACCESS"
 }
