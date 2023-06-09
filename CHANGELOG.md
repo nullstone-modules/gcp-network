@@ -1,4 +1,4 @@
-# 0.3.0 (Jun 08, 2023)
+# 0.3.0 (Jun 09, 2023)
 * Added Serverless VPC Access Connector and associated subnetwork.
 
 # 0.2.3 (May 10, 2023)
