@@ -1,3 +1,6 @@
+# 0.3.2 (Mar 21, 2023)
+* Upgrade providers to latest.
+
 # 0.3.1 (Mar 21, 2023)
 * Enable Private Services Connect with a service networking connection to Google Cloud services.
 
