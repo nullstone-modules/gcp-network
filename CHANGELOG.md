@@ -1,3 +1,6 @@
+# 0.3.1 (Mar 21, 2023)
+* Enable Private Services Connect with a service networking connection to Google Cloud services.
+
 # 0.3.0 (Jun 09, 2023)
 * Added Serverless VPC Access Connector and associated subnetwork.
 
