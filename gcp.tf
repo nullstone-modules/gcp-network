@@ -13,3 +13,9 @@ resource "google_project_service" "vpcaccess_api" {
   disable_dependent_services = false
   disable_on_destroy         = false
 }
+
+resource "google_project_service" "service-networking" {
+  service                    = "servicenetworking.googleapis.com"
+  disable_dependent_services = false
+  disable_on_destroy         = false
+}

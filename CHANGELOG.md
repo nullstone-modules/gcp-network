@@ -1,8 +1,11 @@
-# 0.3.2 (Mar 21, 2023)
+# 0.3.3 (Mar 21, 2024)
+* Enable `servicenetworking.googleapis.com` to ensure Private Service Access works during the first launch in a Google project.
+
+# 0.3.2 (Mar 21, 2024)
 * Upgrade providers to latest.
 
-# 0.3.1 (Mar 21, 2023)
-* Enable Private Services Connect with a service networking connection to Google Cloud services.
+# 0.3.1 (Mar 21, 2024)
+* Enable Private Service Access with a service networking connection to Google Cloud services.
 
 # 0.3.0 (Jun 09, 2023)
 * Added Serverless VPC Access Connector and associated subnetwork.
