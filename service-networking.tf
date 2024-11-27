@@ -7,7 +7,7 @@ resource "google_compute_global_address" "gcp_private" {
 }
 
 resource "google_service_networking_connection" "private_vpc_connection" {
-  network                 = google_compute_network.this.self_link
+  network                 = google_compute_network.this.id
   service                 = "servicenetworking.googleapis.com"
   reserved_peering_ranges = [google_compute_global_address.gcp_private.name]
 }

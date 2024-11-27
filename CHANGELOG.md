@@ -1,3 +1,6 @@
+# 0.3.4 (Nov 27, 2024)
+* Fix reference to network when creating `google_service_networking_connection`.
+
 # 0.3.3 (Mar 21, 2024)
 * Enable `servicenetworking.googleapis.com` to ensure Private Service Access works during the first launch in a Google project.
 
