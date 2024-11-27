@@ -1,3 +1,6 @@
+# 0.3.5 (Nov 27, 2024)
+* Upgrade google Terraform provider.
+
 # 0.3.4 (Nov 27, 2024)
 * Fix reference to network when creating `google_service_networking_connection`.
 

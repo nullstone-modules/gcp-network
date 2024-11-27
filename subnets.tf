@@ -1,4 +1,3 @@
-
 resource "google_compute_subnetwork" "public" {
   name                       = "${local.resource_name}-public-${count.index + 1}"
   ip_cidr_range              = var.public_subnets[count.index]
