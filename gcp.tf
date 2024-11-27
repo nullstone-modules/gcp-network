@@ -1,3 +1,10 @@
+data "google_project" "this" {}
+
+locals {
+  project_id     = data.google_project.this.id
+  project_number = data.google_project.this.number
+}
+
 data "google_compute_zones" "available" {
   depends_on = [google_project_service.compute]
 }

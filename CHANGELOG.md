@@ -1,3 +1,6 @@
+# 0.3.6 (Nov 27, 2024)
+* Enable access to service networking service agent.
+
 # 0.3.5 (Nov 27, 2024)
 * Upgrade google Terraform provider.
 
