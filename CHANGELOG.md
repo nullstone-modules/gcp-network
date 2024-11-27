@@ -1,3 +1,6 @@
+# 0.3.8 (Nov 27, 2024)
+* Remove terraform flapping with subnets.
+
 # 0.3.7 (Nov 27, 2024)
 * Add missing parameters for serverless access.
 
