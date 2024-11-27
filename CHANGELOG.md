@@ -1,3 +1,6 @@
+# 0.3.7 (Nov 27, 2024)
+* Add missing parameters for serverless access.
+
 # 0.3.6 (Nov 27, 2024)
 * Enable access to service networking service agent.
 
