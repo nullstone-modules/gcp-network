@@ -1,3 +1,6 @@
+# 0.3.10 (Dec 03, 2024)
+* Create project service identity for service-networking.
+
 # 0.3.9 (Dec 03, 2024)
 * Wait for service networking API enable before granting permissions.
 
