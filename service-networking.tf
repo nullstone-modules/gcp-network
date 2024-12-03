@@ -2,6 +2,8 @@ resource "google_project_iam_member" "service_networking_service_agent" {
   project = local.project_id
   role    = "roles/servicenetworking.serviceAgent"
   member  = "serviceAccount:service-${local.project_number}@service-networking.iam.gserviceaccount.com"
+
+  depends_on = [google_project_service.service-networking]
 }
 
 resource "google_compute_global_address" "gcp_private" {

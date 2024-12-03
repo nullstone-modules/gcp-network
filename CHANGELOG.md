@@ -1,3 +1,6 @@
+# 0.3.9 (Dec 03, 2024)
+* Wait for service networking API enable before granting permissions.
+
 # 0.3.8 (Nov 27, 2024)
 * Remove terraform flapping with subnets.
 
