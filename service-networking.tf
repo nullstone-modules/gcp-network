@@ -4,6 +4,14 @@ resource "google_project_service" "service-networking" {
   disable_on_destroy         = false
 }
 
+/*
+This api is broken in the Google provider.
+To get around this, attempt to create the google_service_networking_connection below first.
+It will fail with a permissions error because the google_project_iam_member hasn't been created yet.
+Once it fails, the google_project_service_identity will be created and we can continue.
+https://cloud.google.com/vpc/docs/configure-private-services-access#service_account_permissions
+*/
+/*
 resource "google_project_service_identity" "service-networking" {
   provider = google-beta
 
@@ -12,6 +20,7 @@ resource "google_project_service_identity" "service-networking" {
 
   depends_on = [google_project_service.service-networking]
 }
+*/
 
 resource "google_project_iam_member" "service_networking_service_agent" {
   project = local.project_id
