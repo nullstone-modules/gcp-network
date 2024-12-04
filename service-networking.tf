@@ -21,7 +21,6 @@ resource "google_project_iam_member" "service_networking_service_agent" {
   depends_on = [google_project_service_identity.service-networking]
 }
 
-
 resource "google_compute_global_address" "gcp_private" {
   name          = "${local.resource_name}-private-ip-range"
   purpose       = "VPC_PEERING"
