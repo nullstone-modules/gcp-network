@@ -1,3 +1,12 @@
+# 0.3.13 (Dec 11, 2024)
+* Fixed broken reference introduced in 0.3.12.
+
+# 0.3.12 (Dec 04, 2024)
+* Unable to create service identity for service-networking. Disabling for now.
+
+# 0.3.11 (Dec 04, 2024)
+* Fix reference project_id.
+
 # 0.3.10 (Dec 03, 2024)
 * Create project service identity for service-networking.
 
