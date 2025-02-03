@@ -38,6 +38,15 @@ resource "google_compute_global_address" "gcp_private" {
   network       = google_compute_network.this.id
 }
 
+// There are 2 outstanding issue related to destroying this resource
+// - https://github.com/hashicorp/terraform-provider-google/issues/19908
+// - https://github.com/hashicorp/terraform-provider-google/issues/18834
+//
+// If this fails, follow these steps:
+// 1. Go to the VPC network in Google Cloud console
+// 2. Switch to VPC NETWORK PEERING tab
+// 3. Select "servicenetworking-googleapis.com" and click DELETE
+// 4. Run a destroy on the network
 resource "google_service_networking_connection" "private_vpc_connection" {
   network                 = google_compute_network.this.id
   service                 = "servicenetworking.googleapis.com"
