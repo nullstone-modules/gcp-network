@@ -1,3 +1,6 @@
+# 0.3.14 (Oct 22, 2025)
+* Restore service networking identiy creation.
+
 # 0.3.13 (Dec 11, 2024)
 * Fixed broken reference introduced in 0.3.12.
 
