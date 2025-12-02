@@ -1,3 +1,6 @@
+# 0.3.15 (Dec 02, 2025)
+* Added `private_service_cidrs` output for Private services access.
+
 # 0.3.14 (Oct 22, 2025)
 * Restore service networking identiy creation.
 

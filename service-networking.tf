@@ -44,6 +44,10 @@ resource "google_compute_global_address" "gcp_private" {
   network       = google_compute_network.this.id
 }
 
+locals {
+  private_service_cidr = "${google_compute_global_address.gcp_private.address}/${google_compute_global_address.gcp_private.prefix_length}"
+}
+
 // There are 2 outstanding issue related to destroying this resource
 // - https://github.com/hashicorp/terraform-provider-google/issues/19908
 // - https://github.com/hashicorp/terraform-provider-google/issues/18834

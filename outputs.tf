@@ -62,3 +62,8 @@ output "vpc_access_connector" {
   value       = try(google_vpc_access_connector.serverless[0].name, "")
   description = "string ||| The name of the VPC Access Connector that should be used by serverless to access the private subnetworks."
 }
+
+output "private_service_cidrs" {
+  value       = [local.private_service_cidr]
+  description = "list(string) ||| The CIDR range for accessing google-managed services over Private services access."
+}
