@@ -1,3 +1,6 @@
+# 0.4.0 (Dec 10, 2025)
+* Migrate from `terraform` to `tofu`.
+
 # 0.3.15 (Dec 02, 2025)
 * Added `private_service_cidrs` output for Private services access.
 
