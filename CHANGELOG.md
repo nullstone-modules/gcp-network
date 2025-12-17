@@ -1,3 +1,6 @@
+# 0.4.1 (Dec 17, 2025)
+* Added `vpc_access_connector_id` output for downstream configuration.
+
 # 0.4.0 (Dec 10, 2025)
 * Migrate from `terraform` to `tofu`.
 
