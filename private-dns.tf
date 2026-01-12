@@ -16,9 +16,6 @@ resource "google_dns_managed_zone" "internal" {
     networks {
       network_url = google_compute_network.this.id
     }
-    gke_clusters {
-      gke_cluster_name = ""
-    }
   }
 }
 

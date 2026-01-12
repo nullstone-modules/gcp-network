@@ -1,3 +1,6 @@
+# 0.4.4 (Jan 12, 2026)
+* Removed `gke_cluster_name` from private DNS zone configuration.
+
 # 0.4.3 (Jan 12, 2026)
 * Fixed output for `internal_domain_fqdn`. 
 
