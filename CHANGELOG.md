@@ -1,3 +1,6 @@
+# 0.4.2 (Jan 12, 2026)
+* Added `var.internal_subdomain` to optionally create an internal DNS zone.
+
 # 0.4.1 (Dec 17, 2025)
 * Added `vpc_access_connector_id` output for downstream configuration.
 

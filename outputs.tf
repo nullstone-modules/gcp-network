@@ -72,3 +72,14 @@ output "private_service_cidrs" {
   value       = [local.private_service_cidr]
   description = "list(string) ||| The CIDR range for accessing google-managed services over Private services access."
 }
+
+output "internal_domain_fqdn" {
+  value       = try(google_dns_managed_zone.internal[0].name, "")
+  description = "string ||| The FQDN (fully-qualified domain name) of the DNS zone for internal DNS resolution."
+}
+
+output "internal_domain_zone_id" {
+  value       = try(google_dns_managed_zone.internal[0].name, "")
+  description = "string ||| The name of the DNS zone for internal DNS resolution."
+}
+

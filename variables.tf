@@ -10,6 +10,14 @@ variable "private_subnets" {
   default     = ["10.102.0.0/16"]
 }
 
+variable "internal_subdomain" {
+  type        = string
+  default     = ""
+  description = <<EOF
+When specified, creates a private Google Cloud DNS zone that allows internal DNS resolution within the VPC.
+EOF
+}
+
 locals {
   connector_subnet = "10.128.0.0/28"
 }
