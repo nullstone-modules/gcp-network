@@ -1,3 +1,6 @@
+# 0.4.3 (Jan 12, 2026)
+* Fixed output for `internal_domain_fqdn`. 
+
 # 0.4.2 (Jan 12, 2026)
 * Added `var.internal_subdomain` to optionally create an internal DNS zone.
 

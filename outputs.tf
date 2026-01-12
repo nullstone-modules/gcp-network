@@ -74,12 +74,12 @@ output "private_service_cidrs" {
 }
 
 output "internal_domain_fqdn" {
-  value       = try(google_dns_managed_zone.internal[0].name, "")
+  value       = local.internal_domain_fqdn
   description = "string ||| The FQDN (fully-qualified domain name) of the DNS zone for internal DNS resolution."
 }
 
 output "internal_domain_zone_id" {
-  value       = try(google_dns_managed_zone.internal[0].name, "")
+  value       = local.internal_domain_zone_id
   description = "string ||| The name of the DNS zone for internal DNS resolution."
 }
 

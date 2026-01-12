@@ -21,3 +21,8 @@ resource "google_dns_managed_zone" "internal" {
     }
   }
 }
+
+locals {
+  internal_domain_fqdn    = var.internal_subdomain == "" ? "" : google_dns_managed_zone.internal[0].dns_name
+  internal_domain_zone_id = var.internal_subdomain == "" ? "" : google_dns_managed_zone.internal[0].name
+}
