@@ -5,6 +5,17 @@ resource "google_compute_subnetwork" "public" {
   region                   = data.google_compute_zones.available.region
   private_ip_google_access = false
 
+  dynamic "log_config" {
+    for_each = local.vpc_flow_logs_settings
+    iterator = lc
+
+    content {
+      aggregation_interval = lc.value.aggregation_interval
+      flow_sampling        = lc.value.flow_sampling
+      metadata             = lc.value.metadata
+    }
+  }
+
   count = length(var.public_subnets)
 }
 
@@ -15,6 +26,17 @@ resource "google_compute_subnetwork" "private" {
   region                   = data.google_compute_zones.available.region
   private_ip_google_access = true
 
+  dynamic "log_config" {
+    for_each = local.vpc_flow_logs_settings
+    iterator = lc
+
+    content {
+      aggregation_interval = lc.value.aggregation_interval
+      flow_sampling        = lc.value.flow_sampling
+      metadata             = lc.value.metadata
+    }
+  }
+
   count = length(var.private_subnets)
 }
 
@@ -24,4 +46,15 @@ resource "google_compute_subnetwork" "access_connector" {
   network                  = google_compute_network.this.name
   region                   = data.google_compute_zones.available.region
   private_ip_google_access = true
+
+  dynamic "log_config" {
+    for_each = local.vpc_flow_logs_settings
+    iterator = lc
+
+    content {
+      aggregation_interval = lc.value.aggregation_interval
+      flow_sampling        = lc.value.flow_sampling
+      metadata             = lc.value.metadata
+    }
+  }
 }
