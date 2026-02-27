@@ -10,16 +10,18 @@ variable "private_subnets" {
   default     = ["10.102.0.0/16"]
 }
 
+variable "connector_subnet" {
+  type        = string
+  default     = "10.128.0.0/28"
+  description = "Network range for the connector subnet created in the VPC. This subnet is used for private access to GCP-managed services like CloudSQL."
+}
+
 variable "internal_subdomain" {
   type        = string
   default     = ""
   description = <<EOF
 When specified, creates a private Google Cloud DNS zone that allows internal DNS resolution within the VPC.
 EOF
-}
-
-locals {
-  connector_subnet = "10.128.0.0/28"
 }
 
 variable "vpc_flow_logs" {

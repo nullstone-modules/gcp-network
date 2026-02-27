@@ -1,3 +1,6 @@
+# 0.4.6 (Feb 27, 2026)
+* Allow user to specify connector subnet range.
+
 # 0.4.5 (Feb 19, 2026)
 * Added `var.vpc_flow_logs` to enable and configure VPC Flow logs on the network.
 

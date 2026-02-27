@@ -48,6 +48,21 @@ output "private_subnet_self_links" {
   description = "list(string) ||| The self_link of each private subnet"
 }
 
+output "connector_subnet_name" {
+  value       = google_compute_subnetwork.access_connector.name
+  description = "string ||| The name of the private access connector subnet"
+}
+
+output "connector_subnet_id" {
+  value       = google_compute_subnetwork.access_connector.id
+  description = "string ||| The ID of the private access connector subnet"
+}
+
+output "connector_subnet_self_link" {
+  value       = google_compute_subnetwork.access_connector.self_link
+  description = "string ||| The self_link of the private access connector subnet"
+}
+
 output "nat_id" {
   value       = google_compute_router_nat.this.id
   description = "string ||| Id of Cloud NAT"
