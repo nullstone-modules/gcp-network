@@ -68,6 +68,11 @@ output "nat_id" {
   description = "string ||| Id of Cloud NAT"
 }
 
+output "nat_ips" {
+  value       = google_compute_address.nat.*.address
+  description = "list(string) ||| The public IP addresses attached to Cloud NAT. All egress traffic from private subnets originates from one of these addresses."
+}
+
 output "router_id" {
   value       = google_compute_router.this.id
   description = "string ||| Id of Cloud Router"

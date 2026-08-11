@@ -59,5 +59,11 @@ Public subnet access internet through Default Internet gateway and private subne
 - `cloud_nat: string` 
   - Id of Cloud NAT (For example: `experimental-320320/us-west1/nullstone-vpc-router/nullstone-vpc-nat`)
 
+- `nat_ip: string`
+  - The public IP address that private subnets use for egress traffic through Cloud NAT
+
+- `nat_ips: list(string)`
+  - The public IP addresses attached to Cloud NAT. All egress traffic from private subnets originates from one of these addresses.
+
 - `cloud_router: string` 
   - Id of Cloud Router  (For example: `projects/experimental-320320/regions/us-west1/routers/nullstone-vpc-router`)

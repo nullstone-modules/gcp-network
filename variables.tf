@@ -16,6 +16,16 @@ variable "connector_subnet" {
   description = "Network range for the connector subnet created in the VPC. This subnet is used for private access to GCP-managed services like CloudSQL."
 }
 
+variable "nat_ip_count" {
+  type        = number
+  default     = 1
+  description = <<EOF
+The number of static external IP addresses to reserve and attach to the Cloud NAT gateway.
+These addresses are emitted through the `nat_ips` output so they can be allowlisted by external services.
+Each address supports roughly 1000 VMs at the default port allocation; increase this if the NAT runs out of ports.
+EOF
+}
+
 variable "internal_subdomain" {
   type        = string
   default     = ""

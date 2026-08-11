@@ -1,3 +1,8 @@
+# 0.5.0 (Aug 11, 2026)
+* Added `nat_ips` outputs with the public egress IP addresses of Cloud NAT.
+* Cloud NAT now uses reserved static IP addresses (`MANUAL_ONLY`) instead of Google-allocated addresses (`AUTO_ONLY`). This changes the egress IP address of existing networks.
+* Added `var.nat_ip_count` to control how many static IP addresses are attached to Cloud NAT.
+
 # 0.4.6 (Feb 27, 2026)
 * Allow user to specify connector subnet range.
 
