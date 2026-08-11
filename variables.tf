@@ -24,6 +24,11 @@ The number of static external IP addresses to reserve and attach to the Cloud NA
 These addresses are emitted through the `nat_ips` output so they can be allowlisted by external services.
 Each address supports roughly 1000 VMs at the default port allocation; increase this if the NAT runs out of ports.
 EOF
+
+  validation {
+    condition     = var.nat_ip_count >= 1
+    error_message = "nat_ip_count must be at least 1. Cloud NAT drops all egress packets if the gateway has no IP addresses attached."
+  }
 }
 
 variable "internal_subdomain" {

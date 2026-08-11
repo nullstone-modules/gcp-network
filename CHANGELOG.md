@@ -1,3 +1,6 @@
+# 0.5.1 (Aug 11, 2026)
+* Prevent zero NAT IP addresses.
+
 # 0.5.0 (Aug 11, 2026)
 * Added `nat_ips` outputs with the public egress IP addresses of Cloud NAT.
 * Cloud NAT now uses reserved static IP addresses (`MANUAL_ONLY`) instead of Google-allocated addresses (`AUTO_ONLY`). This changes the egress IP address of existing networks.
