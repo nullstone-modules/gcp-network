@@ -5,6 +5,7 @@ resource "google_compute_address" "nat" {
   region       = data.google_compute_zones.available.region
   address_type = "EXTERNAL"
   description  = "Managed by Nullstone"
+  labels       = local.labels
 }
 
 resource "google_compute_router_nat" "this" {

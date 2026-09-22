@@ -1,3 +1,7 @@
+# 0.5.2 (Sep 22, 2026)
+* Added workspace labels to the Cloud NAT static IP addresses and the private services address range so they show up in cost attribution. 
+* Labels now come from `gcp_labels` instead of the deprecated `tags`. This adds `environment`, `owner`, `project`, `application`, `component`, and `dataclassification` alongside the existing `stack`, `env`, and `block` labels; existing resources are updated in place.
+
 # 0.5.1 (Aug 11, 2026)
 * Prevent zero NAT IP addresses.
 

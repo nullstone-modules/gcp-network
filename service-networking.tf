@@ -42,6 +42,7 @@ resource "google_compute_global_address" "gcp_private" {
   address_type  = "INTERNAL"
   prefix_length = 16
   network       = google_compute_network.this.id
+  labels        = local.labels
 }
 
 locals {
